@@ -20,7 +20,7 @@ interface SoundProps extends SoundType {
   functional: boolean;
 }
 
-export function Sound({ functional, icon, id, label, src }: SoundProps) {
+export function Sound({ functional, icon: Icon, id, label, src }: SoundProps) {
   const isPlaying = useSoundStore(state => state.isPlaying);
   const play = useSoundStore(state => state.play);
   const selectSound = useSoundStore(state => state.select);
@@ -92,7 +92,9 @@ export function Sound({ functional, icon, id, label, src }: SoundProps) {
             <ImSpinner9 />
           </span>
         ) : (
-          <span aria-hidden="true">{icon}</span>
+          <span aria-hidden="true">
+            <Icon size={24} />
+          </span>
         )}
       </div>
       <div className={styles.label} id={id}>

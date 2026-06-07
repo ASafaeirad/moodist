@@ -10,7 +10,7 @@ interface CategoryProps extends Category {
 
 export function Category({
   functional = true,
-  icon,
+  Icon,
   id,
   sounds,
   title,
@@ -20,7 +20,7 @@ export function Category({
       <div className={styles.iconContainer}>
         <div className={styles.tail} />
         <div aria-hidden="true" className={styles.icon}>
-          {icon}
+          <Icon />
         </div>
       </div>
 

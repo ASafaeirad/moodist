@@ -10,7 +10,7 @@ export interface Sound {
 export type Sounds = Array<Sound>;
 
 export interface Category {
-  icon: IconType;
+  Icon: IconType;
   id: string;
   sounds: Sounds;
   title: string;

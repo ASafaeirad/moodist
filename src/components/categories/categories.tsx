@@ -19,7 +19,7 @@ export function Categories({ favorites, sounds }: CategoriesProps) {
       {favorites.length > 0 && (
         <Category
           functional={false}
-          icon={<BiSolidHeart />}
+          Icon={BiSolidHeart}
           id="favorites"
           sounds={favorites}
           title="Favorites"
