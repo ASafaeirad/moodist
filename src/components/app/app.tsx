@@ -16,13 +16,12 @@ import { MediaControls } from '@/components/media-controls';
 import { sounds } from '@/data/sounds';
 import { FADE_OUT } from '@/constants/events';
 
-import type { Sound } from '@/data/types';
 import { subscribe } from '@/lib/event';
+import { Donate } from '../categories/donate';
 
 export function App() {
   const categories = useMemo(() => sounds.categories, []);
 
-  const favorites = useSoundStore(useShallow(state => state.getFavorites()));
   const pause = useSoundStore(state => state.pause);
   const lock = useSoundStore(state => state.lock);
   const unlock = useSoundStore(state => state.unlock);
@@ -31,19 +30,6 @@ export function App() {
     () => categories.map(category => category.sounds).flat(),
     [categories],
   );
-
-  const favoriteSounds = useMemo(() => {
-    const favoriteSounds = allSounds.filter(sound =>
-      favorites.includes(sound.id),
-    );
-
-    /**
-     * Reorder based on the order of favorites
-     */
-    return favorites.map(favorite =>
-      favoriteSounds.find(sound => sound.id === favorite),
-    );
-  }, [favorites, allSounds]);
 
   useEffect(() => {
     const onChange = () => {
@@ -81,10 +67,8 @@ export function App() {
         <Container>
           <div id="app" />
           <Buttons />
-          <Categories
-            favorites={favoriteSounds as Array<Sound>}
-            sounds={allSounds}
-          />
+          <Categories sounds={allSounds} />
+          <Donate />
         </Container>
 
         <Toolbar />

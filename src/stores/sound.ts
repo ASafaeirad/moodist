@@ -6,13 +6,11 @@ import { sounds as soundCategories } from '@/data/sounds';
 import { pickMany, random } from '@/helpers/random';
 
 type SoundValue = {
-  isFavorite: boolean;
   isSelected: boolean;
   volume: number;
 };
 
 interface SoundStore {
-  getFavorites: () => Array<string>;
   history: Record<string, SoundValue> | null;
   isPlaying: boolean;
   lock: () => void;
@@ -26,7 +24,6 @@ interface SoundStore {
   setVolume: (id: string, volume: number) => void;
   shuffle: () => void;
   sounds: Record<string, SoundValue>;
-  toggleFavorite: (id: string) => void;
   togglePlay: () => void;
   unlock: () => void;
   unselect: (id: string) => void;
@@ -39,7 +36,6 @@ function createInitialSounds() {
   soundCategories.categories.forEach(category => {
     category.sounds.forEach(sound => {
       initialSounds[sound.id] = {
-        isFavorite: false,
         isSelected: false,
         volume: 0.5,
       };
@@ -52,14 +48,6 @@ function createInitialSounds() {
 export const useSoundStore = create<SoundStore>()(
   persist(
     (set, get) => ({
-      getFavorites() {
-        const { sounds } = get();
-        const ids = Object.keys(sounds);
-        const favorites = ids.filter(id => sounds[id].isFavorite);
-
-        return favorites;
-      },
-
       history: null,
       isPlaying: false,
 
@@ -146,19 +134,6 @@ export const useSoundStore = create<SoundStore>()(
       },
 
       sounds: createInitialSounds(),
-
-      toggleFavorite(id) {
-        const sounds = get().sounds;
-        const sound = sounds[id];
-
-        set({
-          history: null,
-          sounds: {
-            ...sounds,
-            [id]: { ...sound, isFavorite: !sound.isFavorite },
-          },
-        });
-      },
 
       togglePlay() {
         set({ isPlaying: !get().isPlaying });

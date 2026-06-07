@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { ImSpinner9 } from 'react-icons/im/index';
 
 import { Range } from './range';
-import { Favorite } from './favorite';
 
 import { useSound } from '@/hooks/use-sound';
 import { useSoundStore } from '@/stores/sound';
@@ -85,7 +84,6 @@ export function Sound({ functional, icon: Icon, id, label, src }: SoundProps) {
       onClick={handleClick}
       onKeyDown={handleKeyDown}
     >
-      <Favorite id={id} label={label} />
       <div className={styles.icon}>
         {isLoading ? (
           <span aria-hidden="true" className={styles.spinner}>
