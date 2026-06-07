@@ -1,31 +1,18 @@
 import {
-  GiWaterfall,
   GiStonePile,
   GiWindow,
-  GiVillage,
-  GiCarousel,
-  GiSubmarine,
   GiSailboat,
-  GiWindchimes,
-  GiFilmProjector,
-  GiWashingMachine,
   GiSoundWaves,
 } from 'react-icons/gi/index';
 import {
   BsFire,
-  BsFillDropletFill,
   BsFillCloudRainFill,
   BsFillCloudRainHeavyFill,
   BsUmbrellaFill,
-  BsSoundwave,
-  BsPeopleFill,
-  BsFillKeyboardFill,
 } from 'react-icons/bs/index';
 import {
   BiSolidTree,
   BiWater,
-  BiSolidTraffic,
-  BiSolidCoffeeAlt,
   BiSolidPlaneAlt,
   BiSolidDryer,
   BiSolidTrain,
@@ -34,47 +21,27 @@ import {
   FaWater,
   FaWind,
   FaLeaf,
-  FaRegSnowflake,
   FaTree,
   FaCarSide,
   FaRoad,
   FaChurch,
-  FaSubway,
-  FaShoppingBasket,
-  FaKeyboard,
   FaClock,
   FaFan,
 } from 'react-icons/fa/index';
-import {
-  PiTentFill,
-  PiRoadHorizonFill,
-  PiSirenBold,
-  PiVinylRecord,
-} from 'react-icons/pi/index';
+import { PiTentFill, PiVinylRecord } from 'react-icons/pi/index';
 import {
   MdOutlineThunderstorm,
   MdTempleBuddhist,
-  MdConstruction,
   MdWaterDrop,
-  MdRadio,
 } from 'react-icons/md/index';
-import {
-  RiSparkling2Fill,
-  RiFilePaper2Fill,
-  RiBubbleChartFill,
-} from 'react-icons/ri/index';
+import { RiBubbleChartFill } from 'react-icons/ri/index';
 import {
   TbScubaMask,
-  TbBeerFilled,
   TbSailboat,
   TbBowlFilled,
   TbWiper,
 } from 'react-icons/tb/index';
-import { HiOfficeBuilding } from 'react-icons/hi/index';
-import { AiFillExperiment } from 'react-icons/ai/index';
-import { IoRestaurant } from 'react-icons/io5/index';
 import { FaBookOpen } from 'react-icons/fa6/index';
-import { IoIosRadio } from 'react-icons/io/index';
 
 import type { Sound } from './types';
 
@@ -116,35 +83,11 @@ const windInTrees: Sound = {
   label: 'Wind in Trees',
   src: getAssetPath('/sounds/nature/wind-in-trees.mp3'),
 };
-const waterfall: Sound = {
-  icon: GiWaterfall,
-  id: 'waterfall',
-  label: 'Waterfall',
-  src: getAssetPath('/sounds/nature/waterfall.mp3'),
-};
-const walkInSnow: Sound = {
-  icon: FaRegSnowflake,
-  id: 'walk-in-snow',
-  label: 'Walk in Snow',
-  src: getAssetPath('/sounds/nature/walk-in-snow.mp3'),
-};
-const walkOnLeaves: Sound = {
-  icon: FaLeaf,
-  id: 'walk-on-leaves',
-  label: 'Walk on Leaves',
-  src: getAssetPath('/sounds/nature/walk-on-leaves.mp3'),
-};
 const walkOnGravel: Sound = {
   icon: GiStonePile,
   id: 'walk-on-gravel',
   label: 'Walk on Gravel',
   src: getAssetPath('/sounds/nature/walk-on-gravel.mp3'),
-};
-const droplets: Sound = {
-  icon: BsFillDropletFill,
-  id: 'droplets',
-  label: 'Droplets',
-  src: getAssetPath('/sounds/nature/droplets.mp3'),
 };
 const jungle: Sound = {
   icon: FaTree,
@@ -202,61 +145,13 @@ const rainOnLeaves: Sound = {
   src: getAssetPath('/sounds/rain/rain-on-leaves.mp3'),
 };
 
-const highway: Sound = {
-  icon: PiRoadHorizonFill,
-  id: 'highway',
-  label: 'Highway',
-  src: getAssetPath('/sounds/urban/highway.mp3'),
-};
 const road: Sound = {
   icon: FaRoad,
   id: 'road',
   label: 'Road',
   src: getAssetPath('/sounds/urban/road.mp3'),
 };
-const ambulanceSiren: Sound = {
-  icon: PiSirenBold,
-  id: 'ambulance-siren',
-  label: 'Ambulance Siren',
-  src: getAssetPath('/sounds/urban/ambulance-siren.mp3'),
-};
-const busyStreet: Sound = {
-  icon: BsSoundwave,
-  id: 'busy-street',
-  label: 'Busy Street',
-  src: getAssetPath('/sounds/urban/busy-street.mp3'),
-};
-const crowd: Sound = {
-  icon: BsPeopleFill,
-  id: 'crowd',
-  label: 'Crowd',
-  src: getAssetPath('/sounds/urban/crowd.mp3'),
-};
-const traffic: Sound = {
-  icon: BiSolidTraffic,
-  id: 'traffic',
-  label: 'Traffic',
-  src: getAssetPath('/sounds/urban/traffic.mp3'),
-};
-const fireworks: Sound = {
-  icon: RiSparkling2Fill,
-  id: 'fireworks',
-  label: 'Fireworks',
-  src: getAssetPath('/sounds/urban/fireworks.mp3'),
-};
 
-const cafe: Sound = {
-  icon: BiSolidCoffeeAlt,
-  id: 'cafe',
-  label: 'Cafe',
-  src: getAssetPath('/sounds/places/cafe.mp3'),
-};
-const airport: Sound = {
-  icon: BiSolidPlaneAlt,
-  id: 'airport',
-  label: 'Airport',
-  src: getAssetPath('/sounds/places/airport.mp3'),
-};
 const church: Sound = {
   icon: FaChurch,
   id: 'church',
@@ -269,71 +164,17 @@ const temple: Sound = {
   label: 'Temple',
   src: getAssetPath('/sounds/places/temple.mp3'),
 };
-const constructionSite: Sound = {
-  icon: MdConstruction,
-  id: 'construction-site',
-  label: 'Construction Site',
-  src: getAssetPath('/sounds/places/construction-site.mp3'),
-};
 const underwater: Sound = {
   icon: TbScubaMask,
   id: 'underwater',
   label: 'Underwater',
   src: getAssetPath('/sounds/places/underwater.mp3'),
 };
-const crowdedBar: Sound = {
-  icon: TbBeerFilled,
-  id: 'crowded-bar',
-  label: 'Crowded Bar',
-  src: getAssetPath('/sounds/places/crowded-bar.mp3'),
-};
-const nightVillage: Sound = {
-  icon: GiVillage,
-  id: 'night-village',
-  label: 'Night Village',
-  src: getAssetPath('/sounds/places/night-village.mp3'),
-};
-const subwayStation: Sound = {
-  icon: FaSubway,
-  id: 'subway-station',
-  label: 'Subway Station',
-  src: getAssetPath('/sounds/places/subway-station.mp3'),
-};
-const office: Sound = {
-  icon: HiOfficeBuilding,
-  id: 'office',
-  label: 'Office',
-  src: getAssetPath('/sounds/places/office.mp3'),
-};
-const supermarket: Sound = {
-  icon: FaShoppingBasket,
-  id: 'supermarket',
-  label: 'Supermarket',
-  src: getAssetPath('/sounds/places/supermarket.mp3'),
-};
-const carousel: Sound = {
-  icon: GiCarousel,
-  id: 'carousel',
-  label: 'Carousel',
-  src: getAssetPath('/sounds/places/carousel.mp3'),
-};
-const laboratory: Sound = {
-  icon: AiFillExperiment,
-  id: 'laboratory',
-  label: 'Laboratory',
-  src: getAssetPath('/sounds/places/laboratory.mp3'),
-};
 const laundryRoom: Sound = {
   icon: BiSolidDryer,
   id: 'laundry-room',
   label: 'Laundry Room',
   src: getAssetPath('/sounds/places/laundry-room.mp3'),
-};
-const restaurant: Sound = {
-  icon: IoRestaurant,
-  id: 'restaurant',
-  label: 'Restaurant',
-  src: getAssetPath('/sounds/places/restaurant.mp3'),
 };
 const library: Sound = {
   icon: FaBookOpen,
@@ -360,12 +201,6 @@ const airplane: Sound = {
   label: 'Airplane',
   src: getAssetPath('/sounds/transport/airplane.mp3'),
 };
-const submarine: Sound = {
-  icon: GiSubmarine,
-  id: 'submarine',
-  label: 'Submarine',
-  src: getAssetPath('/sounds/transport/submarine.mp3'),
-};
 const sailboat: Sound = {
   icon: GiSailboat,
   id: 'sailboat',
@@ -379,35 +214,11 @@ const rowingBoat: Sound = {
   src: getAssetPath('/sounds/transport/rowing-boat.mp3'),
 };
 
-const keyboard: Sound = {
-  icon: BsFillKeyboardFill,
-  id: 'keyboard',
-  label: 'Keyboard',
-  src: getAssetPath('/sounds/things/keyboard.mp3'),
-};
-const typewriter: Sound = {
-  icon: FaKeyboard,
-  id: 'typewriter',
-  label: 'Typewriter',
-  src: getAssetPath('/sounds/things/typewriter.mp3'),
-};
-const paper: Sound = {
-  icon: RiFilePaper2Fill,
-  id: 'paper',
-  label: 'Paper',
-  src: getAssetPath('/sounds/things/paper.mp3'),
-};
 const clock: Sound = {
   icon: FaClock,
   id: 'clock',
   label: 'Clock',
   src: getAssetPath('/sounds/things/clock.mp3'),
-};
-const windChimes: Sound = {
-  icon: GiWindchimes,
-  id: 'wind-chimes',
-  label: 'Wind Chimes',
-  src: getAssetPath('/sounds/things/wind-chimes.mp3'),
 };
 const singingBowl: Sound = {
   icon: TbBowlFilled,
@@ -421,18 +232,6 @@ const ceilingFan: Sound = {
   label: 'Ceiling Fan',
   src: getAssetPath('/sounds/things/ceiling-fan.mp3'),
 };
-const dryer: Sound = {
-  icon: BiSolidDryer,
-  id: 'dryer',
-  label: 'Dryer',
-  src: getAssetPath('/sounds/things/dryer.mp3'),
-};
-const slideProjector: Sound = {
-  icon: GiFilmProjector,
-  id: 'slide-projector',
-  label: 'Slide Projector',
-  src: getAssetPath('/sounds/things/slide-projector.mp3'),
-};
 const boilingWater: Sound = {
   icon: MdWaterDrop,
   id: 'boiling-water',
@@ -444,24 +243,6 @@ const bubbles: Sound = {
   id: 'bubbles',
   label: 'Bubbles',
   src: getAssetPath('/sounds/things/bubbles.mp3'),
-};
-const tuningRadio: Sound = {
-  icon: MdRadio,
-  id: 'tuning-radio',
-  label: 'Tuning Radio',
-  src: getAssetPath('/sounds/things/tuning-radio.mp3'),
-};
-const morseCode: Sound = {
-  icon: IoIosRadio,
-  id: 'morse-code',
-  label: 'Morse Code',
-  src: getAssetPath('/sounds/things/morse-code.mp3'),
-};
-const washingMachine: Sound = {
-  icon: GiWashingMachine,
-  id: 'washing-machine',
-  label: 'Washing Machine',
-  src: getAssetPath('/sounds/things/washing-machine.mp3'),
 };
 const vinylEffect: Sound = {
   icon: PiVinylRecord,
@@ -476,18 +257,6 @@ const windshieldWipers: Sound = {
   src: getAssetPath('/sounds/things/windshield-wipers.mp3'),
 };
 
-const whiteNoise: Sound = {
-  icon: GiSoundWaves,
-  id: 'white-noise',
-  label: 'White Noise',
-  src: getAssetPath('/sounds/noise/white-noise.wav'),
-};
-const pinkNoise: Sound = {
-  icon: GiSoundWaves,
-  id: 'pink-noise',
-  label: 'Pink Noise',
-  src: getAssetPath('/sounds/noise/pink-noise.wav'),
-};
 const brownNoise: Sound = {
   icon: GiSoundWaves,
   id: 'brown-noise',
@@ -502,12 +271,8 @@ export const sounds: Sound[] = [
   wind,
   howlingWind,
   windInTrees,
-  waterfall,
-  walkInSnow,
-  walkOnLeaves,
   walkOnGravel,
-  droplets,
-  jungle,
+  jungle, // FIX
   lightRain,
   heavyRain,
   thunder,
@@ -516,52 +281,23 @@ export const sounds: Sound[] = [
   rainOnUmbrella,
   rainOnTent,
   rainOnLeaves,
-  highway,
   road,
-  ambulanceSiren,
-  busyStreet,
-  crowd,
-  traffic,
-  fireworks,
-  cafe,
-  airport,
   church,
   temple,
-  constructionSite,
   underwater,
-  crowdedBar,
-  nightVillage,
-  subwayStation,
-  office,
-  supermarket,
-  carousel,
-  laboratory,
   laundryRoom,
-  restaurant,
   library,
   train,
   insideATrain,
   airplane,
-  submarine,
   sailboat,
   rowingBoat,
-  keyboard,
-  typewriter,
-  paper,
   clock,
-  windChimes,
   singingBowl,
   ceilingFan,
-  dryer,
-  slideProjector,
   boilingWater,
   bubbles,
-  tuningRadio,
-  morseCode,
-  washingMachine,
   vinylEffect,
   windshieldWipers,
-  whiteNoise,
-  pinkNoise,
   brownNoise,
 ];
