@@ -1,6 +1,9 @@
 version: '3.9'
 services:
   moodist:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: ghcr.io/remvze/moodist
     logging:
       options:
