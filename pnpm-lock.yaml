@@ -96,6 +96,9 @@ importers:
       standard-version:
         specifier: 9.5.0
         version: 9.5.0
+      workbox-window:
+        specifier: 7.4.1
+        version: 7.4.1
 
 packages:
 
