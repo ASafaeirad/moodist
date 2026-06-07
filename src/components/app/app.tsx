@@ -1,35 +1,27 @@
-import { useMemo, useEffect } from 'react';
-import { useShallow } from 'zustand/react/shallow';
 import { Howler } from 'howler';
+import { useEffect } from 'react';
 
 import { useSoundStore } from '@/stores/sound';
 
-import { Container } from '@/components/container';
-import { StoreConsumer } from '@/components/store-consumer';
 import { Buttons } from '@/components/buttons';
-import { Categories } from '@/components/categories';
+import { Container } from '@/components/container';
+import { MediaControls } from '@/components/media-controls';
 import { SharedModal } from '@/components/modals/shared';
+import { StoreConsumer } from '@/components/store-consumer';
 import { Toolbar } from '@/components/toolbar';
 import { SnackbarProvider } from '@/contexts/snackbar';
-import { MediaControls } from '@/components/media-controls';
 
-import { sounds } from '@/data/sounds';
 import { FADE_OUT } from '@/constants/events';
+import { sounds } from '@/data/sounds';
 
 import { subscribe } from '@/lib/event';
-import { Donate } from '../categories/donate';
+import { Donate } from '../donate';
+import { Sounds } from '../sounds';
 
 export function App() {
-  const categories = useMemo(() => sounds.categories, []);
-
   const pause = useSoundStore(state => state.pause);
   const lock = useSoundStore(state => state.lock);
   const unlock = useSoundStore(state => state.unlock);
-
-  const allSounds = useMemo(
-    () => categories.map(category => category.sounds).flat(),
-    [categories],
-  );
 
   useEffect(() => {
     const onChange = () => {
@@ -67,7 +59,7 @@ export function App() {
         <Container>
           <div id="app" />
           <Buttons />
-          <Categories sounds={allSounds} />
+          <Sounds sounds={sounds} />
           <Donate />
         </Container>
 

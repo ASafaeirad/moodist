@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import merge from 'deepmerge';
 
-import { sounds as soundCategories } from '@/data/sounds';
+import { sounds as allSounds } from '@/data/sounds';
 import { pickMany, random } from '@/helpers/random';
 
 type SoundValue = {
@@ -33,13 +33,11 @@ interface SoundStore {
 function createInitialSounds() {
   const initialSounds: Record<string, SoundValue> = {};
 
-  soundCategories.categories.forEach(category => {
-    category.sounds.forEach(sound => {
-      initialSounds[sound.id] = {
-        isSelected: false,
-        volume: 0.5,
-      };
-    });
+  allSounds.forEach(sound => {
+    initialSounds[sound.id] = {
+      isSelected: false,
+      volume: 0.5,
+    };
   });
 
   return initialSounds;

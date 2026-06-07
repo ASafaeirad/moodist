@@ -32,10 +32,8 @@ export function SharedModal() {
         const parsed = JSON.parse(decodeURIComponent(share));
         const allSounds: Record<string, string> = {};
 
-        sounds.categories.forEach(category => {
-          category.sounds.forEach(sound => {
-            allSounds[sound.id] = sound.label;
-          });
+        sounds.forEach(sound => {
+          allSounds[sound.id] = sound.label;
         });
 
         const _sharedSounds: Array<{

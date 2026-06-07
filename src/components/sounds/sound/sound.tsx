@@ -15,11 +15,9 @@ import type { Sound as SoundType } from '@/data/types';
 
 import { useKeyboardButton } from '@/hooks/use-keyboard-button';
 
-interface SoundProps extends SoundType {
-  functional: boolean;
-}
+interface SoundProps extends SoundType {}
 
-export function Sound({ functional, icon: Icon, id, label, src }: SoundProps) {
+export function Sound({ icon: Icon, id, label, src }: SoundProps) {
   const isPlaying = useSoundStore(state => state.isPlaying);
   const play = useSoundStore(state => state.play);
   const selectSound = useSoundStore(state => state.select);
@@ -42,12 +40,12 @@ export function Sound({ functional, icon: Icon, id, label, src }: SoundProps) {
   useEffect(() => {
     if (locked) return;
 
-    if (isSelected && isPlaying && functional) {
+    if (isSelected && isPlaying) {
       sound?.play();
     } else {
       sound?.pause();
     }
-  }, [isSelected, sound, isPlaying, functional, locked]);
+  }, [isSelected, sound, isPlaying, locked]);
 
   const select = useCallback(() => {
     if (locked) return;

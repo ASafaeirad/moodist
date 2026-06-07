@@ -6,14 +6,3 @@ export interface Sound {
   label: string;
   src: string;
 }
-
-export type Sounds = Array<Sound>;
-
-export interface Category {
-  Icon: IconType;
-  id: string;
-  sounds: Sounds;
-  title: string;
-}
-
-export type Categories = Array<Category>;
