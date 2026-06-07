@@ -52,7 +52,6 @@
     "husky": "9.1.7",
     "lint-staged": "17.0.7",
     "postcss-nesting": "14.0.0",
-    "standard-version": "9.5.0",
-    "workbox-window": "7.4.1"
+    "standard-version": "9.5.0"
   }
 }
