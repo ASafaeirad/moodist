@@ -1,4 +1,4 @@
-import { useCallback, useEffect, forwardRef, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { ImSpinner9 } from 'react-icons/im/index';
 
 import { Range } from './range';
@@ -18,15 +18,9 @@ import { useKeyboardButton } from '@/hooks/use-keyboard-button';
 
 interface SoundProps extends SoundType {
   functional: boolean;
-  hidden: boolean;
-  selectHidden: (key: string) => void;
-  unselectHidden: (key: string) => void;
 }
 
-export const Sound = forwardRef<HTMLDivElement, SoundProps>(function Sound(
-  { functional, hidden, icon, id, label, selectHidden, src, unselectHidden },
-  ref,
-) {
+export function Sound({ functional, icon, id, label, src }: SoundProps) {
   const isPlaying = useSoundStore(state => state.isPlaying);
   const play = useSoundStore(state => state.play);
   const selectSound = useSoundStore(state => state.select);
@@ -55,11 +49,6 @@ export const Sound = forwardRef<HTMLDivElement, SoundProps>(function Sound(
       sound?.pause();
     }
   }, [isSelected, sound, isPlaying, functional, locked]);
-
-  useEffect(() => {
-    if (hidden && isSelected) selectHidden(label);
-    else if (hidden && !isSelected) unselectHidden(label);
-  }, [label, isSelected, hidden, selectHidden, unselectHidden]);
 
   const select = useCallback(() => {
     if (locked) return;
@@ -90,14 +79,9 @@ export const Sound = forwardRef<HTMLDivElement, SoundProps>(function Sound(
   return (
     <div
       aria-label={`${label} sound`}
-      ref={ref}
       role="button"
       tabIndex={0}
-      className={cn(
-        styles.sound,
-        isSelected && styles.selected,
-        hidden && styles.hidden,
-      )}
+      className={cn(styles.sound, isSelected && styles.selected)}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
     >
@@ -117,4 +101,4 @@ export const Sound = forwardRef<HTMLDivElement, SoundProps>(function Sound(
       <Range id={id} label={label} />
     </div>
   );
-});
+}

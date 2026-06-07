@@ -26,7 +26,7 @@ export function Category({
 
       <div className={styles.title}>{title}</div>
 
-      <Sounds functional={functional} id={id} sounds={sounds} />
+      <Sounds functional={functional} sounds={sounds} />
     </div>
   );
 }

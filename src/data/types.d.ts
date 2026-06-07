@@ -1,5 +1,7 @@
+import type { IconType } from 'react-icons';
+
 export interface Sound {
-  icon: React.ReactNode;
+  icon: IconType;
   id: string;
   label: string;
   src: string;
@@ -8,7 +10,7 @@ export interface Sound {
 export type Sounds = Array<Sound>;
 
 export interface Category {
-  icon: React.ReactNode;
+  icon: IconType;
   id: string;
   sounds: Sounds;
   title: string;

@@ -1,24 +1,36 @@
-import { AnimatePresence } from 'motion/react';
+import { BiSolidHeart } from 'react-icons/bi/index';
 
 import { Category } from './category';
 import { Donate } from './donate';
+import { Sounds } from '@/components/sounds';
 
-import type { Categories } from '@/data/types';
+import styles from './categories.module.css';
+
+import type { Sounds as SoundsType } from '@/data/types';
 
 interface CategoriesProps {
-  categories: Categories;
+  favorites: SoundsType;
+  sounds: SoundsType;
 }
 
-export function Categories({ categories }: CategoriesProps) {
+export function Categories({ favorites, sounds }: CategoriesProps) {
   return (
-    <AnimatePresence initial={false}>
-      {categories.map((category, index) => (
-        <div key={category.id}>
-          <Category functional={category.id !== 'favorites'} {...category} />
+    <>
+      {favorites.length > 0 && (
+        <Category
+          functional={false}
+          icon={<BiSolidHeart />}
+          id="favorites"
+          sounds={favorites}
+          title="Favorites"
+        />
+      )}
 
-          {index === 3 && <Donate />}
-        </div>
-      ))}
-    </AnimatePresence>
+      <div className={styles.allSounds} id="category-all">
+        <Sounds functional sounds={sounds} />
+      </div>
+
+      <Donate />
+    </>
   );
 }
