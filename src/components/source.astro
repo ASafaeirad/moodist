@@ -3,7 +3,6 @@ import { FaGithub } from 'react-icons/fa/index';
 
 import { SpecialButton } from './special-button';
 import { Container } from './container';
-import Binary from './binary.astro';
 ---
 
 <div class="source">
@@ -24,8 +23,6 @@ import Binary from './binary.astro';
           Source Code
         </SpecialButton>
       </div>
-
-      <div class="binary"><Binary /></div>
     </div>
   </Container>
 </div>
@@ -38,7 +35,11 @@ import Binary from './binary.astro';
       position: relative;
       padding: 0 20px 40px;
       overflow: hidden;
-      background: linear-gradient(transparent, rgb(24 24 27 / 70%));
+      background: linear-gradient(
+        transparent,
+        transparent 50%,
+        rgb(24 24 27 / 20%)
+      );
       border-radius: 0 0 20px 20px;
 
       & .binary {
@@ -48,7 +49,7 @@ import Binary from './binary.astro';
         width: calc(100% + 10px);
         height: 200px;
         overflow: hidden;
-        font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+        font-family: "Nimbus Mono PS", "Courier New", monospace;
         color: var(--color-foreground-subtler);
         word-break: break-all;
         pointer-events: none;
@@ -65,7 +66,7 @@ import Binary from './binary.astro';
         left: 50%;
         width: 70%;
         height: 1px;
-        content: '';
+        content: "";
         background: linear-gradient(
           90deg,
           transparent,
